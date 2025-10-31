@@ -41,16 +41,14 @@ A estrutura deste repositório foi cuidadosamente planejada para promover **clar
 
 ```
 DESAFIO-QA-BEEDOO-2025/
-├── README.md                # Guia principal do projeto
+├── README.md                # Documentação do projeto
 │
 ├── features/                # Especificações de testes BDD (Gherkin)
 │   ├── 1_create_course.feature
 │   ├── 2_list_course.feature
-│   └── 3_delete_course.feature
-│
-└── .github/                 # Templates e recursos de colaboração
-    ├── ISSUE_TEMPLATE.md
-    └── PULL_REQUEST_TEMPLATE.md
+│   ├── 3_delete_course.feature
+│   
+
 ```
 
 > Esta organização visa garantir a máxima transparência, facilitar auditorias e suportar a evolução contínua dos processos de qualidade.
