@@ -41,29 +41,14 @@ A estrutura deste repositório foi cuidadosamente planejada para promover **clar
 
 ```
 DESAFIO-QA-BEEDOO-2025/
-├── README.md                # Guia principal do projeto e instruções iniciais
-├── CHANGELOG.md             # Registro de alterações e histórico de execuções
-├── setup.md                 # Procedimentos detalhados para configuração de ambiente
-├── exploratory.md           # Relatórios e notas de testes exploratórios
-├── gaps.md                  # Levantamento de gaps, riscos e oportunidades de melhoria
-│
-├── docs/                    # Documentação técnica e estratégica
-│   ├── decisions.md         # Registro de decisões técnicas e de processo
-│   ├── strategy.md          # Estratégia de testes e critérios de qualidade
-│   └── vulnerabilities.md   # Mapeamento e análise de vulnerabilidades identificadas
+├── README.md                # Guia principal do projeto
 │
 ├── features/                # Especificações de testes BDD (Gherkin)
-│   ├── create_course.feature
-│   ├── list_course.feature
-│   └── delete_course.feature
+│   ├── 1_create_course.feature
+│   ├── 2_list_course.feature
+│   └── 3_delete_course.feature
 │
-├── sheets/                  # Evidências, planilhas e rastreabilidade de casos de teste
-│   ├── 01-TestCases.csv
-│   ├── 02-TestCases.csv
-│   ├── 03-TestCases.csv
-│   └── evidence_links.md
-│
-└── .github/                 # Templates e recursos de automação para o GitHub
+└── .github/                 # Templates e recursos de colaboração
     ├── ISSUE_TEMPLATE.md
     └── PULL_REQUEST_TEMPLATE.md
 ```
