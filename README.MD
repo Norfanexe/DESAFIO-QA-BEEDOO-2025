@@ -21,15 +21,16 @@
 - [Descrição do Projeto](#-descrição-do-projeto)
 - [Estrutura do Repositório](#-estrutura-do-repositório)
 - [Instruções de Execução](#-instruções-de-execução)
-- [Planilha de Casos de Teste e Bugs](#-planilha-de-casos-de-teste-e-bugs)
-- [Estratégia Adotada para os Casos de Teste](#-estratégia-adotada-para-os-casos-de-teste)
+- [Planilha de Casos de Teste](#-planilha-de-casos-de-teste)
+- [Processo de Execução dos Testes](#-processo-de-execução-dos-testes)
+- [Metodologia para Relato de Bugs](#-metodologia-para-relato-de-bugs)
+- [Estratégia adotada para os Casos de Teste](#-estratégia-adotada-para-os-casos-de-teste)
 - [User Stories](#-user-stories)
-- [Decisões Tomadas](#-decisões-tomadas)
+- [Resumo Executivo de Qualidade](#-resumo-executivo-de-qualidade)
 - [Relatório de Bugs](#-relatório-de-bugs)
 - [Melhorias Sugeridas](#-melhorias-sugeridas)
-- [Considerações Finais](#-considerações-finais)
-- [Agradecimentos](#-agradecimentos)
-- [Contato](#-contato)
+- [Observações finais](#-observações-finais)
+- [Conclusão e Agradecimentos](#-conclusão-e-agradecimentos)
 
 ## 📌 Descrição do Projeto
 
@@ -50,46 +51,40 @@ DESAFIO-QA-BEEDOO-2025/
 │   
 
 ```
-
 > Esta organização visa garantir a máxima transparência, facilitar auditorias e suportar a evolução contínua dos processos de qualidade.
 
 ### Ambiente de Teste
 
 - **Aplicação:** https://creative-sherbet-a51eac.netlify.app/  
-- **Ambiente:** Staging (ou Production)  
 - **Sistema Operacional:** Windows 11 Pro 22H2  
-- **Navegadores testados:**  
-  - **Microsoft Edge:** 118.0.2088.0 (Stable)  
-  - **Google Chrome:** 118.0.5993.90 (Stable)  
-- **Resolução:** 1920 x 1080  
-- **Condições de rede:** Conexão doméstica estável; testes adicionais com throttle 3s / 1 Mbps para simular alta latência / baixa banda  
-- **Ferramentas:** DevTools (Network / Console); gravação: capcut (MP4), 60 FPS, 1280x720, codec H.264  
+- **Navegador testado:** **Google Chrome:** 118.0.5993.90 (Stable)  
+- **Resolução:** 1360x720 
+- **Ferramentas:** DevTools (Network / Console); gravação: microsoft clipchamp (MP4), 60 FPS, 1360x720, codec H.264  
 - **Observações:** limpar cache e cookies antes de cada execução da suíte; desabilitar extensões do navegador.
 
-## 🛠️ Instruções para Execução dos Testes
+## 🛠️ Instruções de Execução
 
 1. Acesse o ambiente de testes: [https://creative-sherbet-a51eac.netlify.app/](https://creative-sherbet-a51eac.netlify.app/)
-2. Abra o **DevTools** (F12) e selecione a aba **Network** > **Fetch/XHR**.
+2. Abra o **DevTools** (F12) e selecione a aba **Network**
 3. Siga os procedimentos descritos na planilha de casos de teste.
-4. Utilize os dados de teste (`TestData`) especificados para cada cenário.
+4. Utilize os dados de teste (`TestData`) especificados para cada cenário que for necessário.
 5. Compare os resultados obtidos com os resultados esperados (`ExpectedResult`).
-6. Consulte os vídeos de evidência (formato MP4) para validação visual dos testes.
+6. Consulte os vídeos de evidência (formato MP4) para validação visual dos testes disponíveis no drive.
 
 ### Considerações sobre o Ambiente de Testes
 
-O módulo disponível em [creative-sherbet-a51eac.netlify.app](https://creative-sherbet-a51eac.netlify.app/) consiste em um front-end estático hospedado no Netlify, sem integração com um back-end real. Durante a execução dos testes, foram observadas as seguintes limitações:
+O módulo disponível em [creative-sherbet-a51eac.netlify.app](https://creative-sherbet-a51eac.netlify.app/) consiste em um front-end estático hospedado no Netlify. Durante a execução dos testes, foram observadas as seguintes limitações:
 
-- **Ausência de persistência de dados:** Cursos criados não permanecem após atualização da página.
-- **Inexistência de requisições GET/POST:** Não há comunicação com API, o que pode ser verificado na aba Network do DevTools.
+- **Ausência de persistência de dados:** Cursos criados não possuem opção de acessar, bem como links das salas após atualização da página.
 - **Rotas inválidas:** Algumas rotas geradas pelo front-end resultam em erro 404 (exemplo: `/QA Essencial`).
 
-Essas restrições foram devidamente consideradas na elaboração e execução dos casos de teste, bem como no registro dos bugs identificados.
+Essas restrições foram devidamente consideradas na elaboração e execução dos casos de teste, bem como no registro dos bugs e features identificadas .
 
 > **Nota:** A análise concentrou-se na validação da interface, usabilidade, mensagens de erro e comportamento esperado do front-end, com o objetivo de identificar gaps e inconsistências relevantes.
 
 ## 📊 Planilha de Casos de Teste
 
-Esta planilha consolida todos os cenários de teste, assegurando **rastreabilidade completa** das três User Stories: **Criar Curso**, **Listar Curso** e **Excluir Curso**. Cada caso de teste foi elaborado com foco em **cobertura total**, contemplando situações de **sucesso**, **falha**, **bordas**, **exceções** e **segurança**, alinhado às melhores práticas de QA.
+A planilha consolida todos os cenários de teste, assegurando **rastreabilidade completa** das três User Stories: **Criar Curso**, **Listar Curso** e **Excluir Curso**. Cada caso de teste foi elaborado com foco em **cobertura total**, contemplando situações de **sucesso**, **falha**, **bordas**, **exceções** e **segurança**, alinhado às melhores práticas de QA.
 
 ### 🧪 Estrutura da Documentação
 
@@ -99,10 +94,6 @@ Os cenários e casos de teste estão organizados por User Story (US1, US2, US3),
 - **Colunas Principais**:
     - `ID`, `StoryId`, `Title`, `PreCondition`, `Steps`, `ExpectedResult`, `ObtainedResult`, `Severity`, `Priority`, `Notes`, `Methodology`, `Performance`, entre outras.
 - **Usabilidade**: Colunas congeladas para facilitar navegação e leitura, otimizando a análise horizontal dos dados.
-- **Status dos Testes**:
-    - **US1 – Criar Curso**: Todos os testes executados, com resultados documentados (`Passed`, `Failed`, `Blocked`).
-    - **US2 – Listar Curso**: Testes registrados com status `Blocked`, devido a restrições de persistência no ambiente.
-    - **US3 – Excluir Curso**: Estrutura de testes pronta, resultados em fase de consolidação.
 
 📎 [Planilha Google Sheets](https://docs.google.com/spreadsheets/d/117UMb9cgL2hvZKnPAlYS_xqoPKqJS3Jy8xluBRSShbo/edit?usp=sharing)
 
@@ -139,14 +130,21 @@ Cada registro contempla os seguintes campos obrigatórios:
 - **Observações Adicionais**  
 - **Metodologia**
 
-Além dos cenários previstos, foram identificados bugs em situações de validação negativa, ausência de persistência de dados e falhas de feedback visual. Todos os registros encontram-se organizados na planilha e devidamente referenciados no README do projeto.
+Além dos cenários previstos, foram identificados bugs em situações de validação negativa, ausência de persistência de dados e falhas de feedback visual. Todos os registros encontram-se organizados na planilha e devidamente referenciados no README do projeto e evidências gravadas.
 
 📌 **Observações Importantes:**  
-- Alguns testes foram classificados como **Blocked** (por exemplo, exclusão via interface do usuário) devido a limitações de implementação.  
+- Alguns testes foram classificados como **Blocked** (por exemplo, exclusão via interface do usuário) devido a limitações da atual implementação.  
 
 - Nesses casos, a validação foi realizada parcialmente por meio de ferramentas de desenvolvedor (**DevTools**), utilizando requisições **DELETE** diretas, com as evidências devidamente anexadas ao relatório.
 
-Os defeitos identificados foram documentados em uma **planilha dedicada**, seguindo padrão profissional:
+Os defeitos identificados foram documentados na **Planilha Google Sheets**:
+
+### 🔎 Observação Geral sobre Ambiente/Backend
+
+Durante a execução dos testes, foram identificados retornos recorrentes de **404 (Not Found)** em requisições de listagem e **405 (Method Not Allowed)** em requisições de exclusão.  
+Esses erros indicam que o frontend está tentando acessar rotas inexistentes ou que o backend não implementa/permite determinados métodos (como DELETE).  
+
+Esse comportamento afeta **todos os cenários relacionados à listagem e exclusão de cursos**, resultando em falhas ou bloqueios que não estão necessariamente ligados à lógica do frontend, mas sim a limitações do ambiente de teste.   Portanto, parte dos resultados (Failed/Blocked) deve ser interpretada como **gap de implementação no backend** e não apenas como bug funcional do sistema.
 
 📎 [Acessar relatório de bugs](https://docs.google.com/spreadsheets/d/117UMb9cgL2hvZKnPAlYS_xqoPKqJS3Jy8xluBRSShbo/edit?gid=324846143#gid=324846143)
 
@@ -155,7 +153,7 @@ Os defeitos identificados foram documentados em uma **planilha dedicada**, segui
 
 ### 🧭 Metodologia Utilizada
 
-> Para garantir a qualidade e a rastreabilidade dos testes realizados, foi adotada uma abordagem estruturada, combinando práticas de tecnicas recomendadas e complementares:
+> Para garantir a qualidade e a rastreabilidade dos testes realizados, foi adotada uma abordagem combinando práticas de tecnicas recomendadas e complementares:
 
 - **ISTQB (International Software Testing Qualifications Board)**  
     - Utilizado como referência para a elaboração dos casos de teste, definição de critérios de aceitação e classificação de defeitos. Padronização da documentação e garantia de rastreabilidade dos requisitos testados. Aplicação consistente dos critérios de **Severity** e **Priority**, considerando impacto no negócio e urgência de resolução.
@@ -171,158 +169,351 @@ Os defeitos identificados foram documentados em uma **planilha dedicada**, segui
 
 > Os casos de teste foram escritos em formato **Gherkin** e também em **passo a passo detalhado**, garantindo clareza e rastreabilidade. A estratégia aplicada buscou cobrir diferentes dimensões da qualidade do sistema, contemplando:
 
-- **Cenários de sucesso**  
-  - Fluxos principais de criação, listagem e exclusão de cursos.  
-  - Validação de campos obrigatórios e limites definidos (ex.: título ≤ 255 caracteres).  
-  - Verificação de ordenação, paginação e feedback visual esperado.  
-
-- **Cenários de erro**  
-  - Tentativas de criar cursos com dados inválidos (campos vazios, formatos incorretos, datas inconsistentes).  
-  - URLs de imagem inválidas ou quebradas.  
-  - Erros de rede simulados (timeout, backend 500).  
-  - Exclusão de curso inexistente (404) ou sem permissão (403).  
-
-- **Casos de borda**  
-  - Limite máximo de caracteres em campos (255/256).  
-  - Vagas zero ou negativas.  
-  - Listagem com 0 cursos (estado vazio).  
-  - Paginação com mais de 10 cursos.  
-  - Double submit (cliques múltiplos no botão de salvar).  
-
-- **Fluxos de exceção**  
-  - Tratamento de falhas no backend (500, timeout).  
-  - Mensagens de erro claras e localizadas (i18n).  
-  - Consistência eventual entre criação e listagem.  
-  - Exclusão repetida do mesmo curso (idempotência).  
-
-- **Testes de segurança**  
-  - Sanitização de inputs contra XSS (`<script>` removido, `<b>` permitido).  
-  - Tentativas de payloads maliciosos.  
-  - Exclusão sem permissão (403).  
-  - Garantia de que dados inválidos não corrompem o sistema.  
+> A definição das metodologias, não exatamente define que um determinado teste usou uma unica metodologia. O objetivo deste registro é demonstrar o caminho base utilizado para definir os testes, e é correto pensar que ambas as metodologias acima, em conjunto, gerou a completude deste documento.
 
 ## 📋 User Stories
 
 ### 📌 Metodologia para Definição das User Stories
-
 As User Stories foram elaboradas a partir de uma análise funcional detalhada do módulo de cursos disponível no ambiente do Beedoo Challenge: [https://creative-sherbet-a51eac.netlify.app](https://creative-sherbet-a51eac.netlify.app). O processo adotado seguiu as melhores práticas, visando garantir cobertura abrangente e rastreabilidade dos requisitos.
 
 ### Critérios Utilizados
+- **Análise Exploratória da Interface:** Navegação sistemática por todas as rotas disponíveis (`/new-course`, `/courses`) para mapear fluxos, identificar elementos interativos e pontos críticos.  
+- **Cobertura Funcional Abrangente:** Histórias contemplam os principais fluxos do sistema — **criação de curso**, **listagem de cursos** e **exclusão de curso** — incluindo cenários de sucesso, falha e segurança.  
+- **Validação Negativa e de Borda:** Cenários para campos obrigatórios em branco, valores inválidos, duplicidade, ataques XSS e falhas de rede.  
+- **Observação de Limitações do Ambiente:** Alguns testes foram classificados como *Blocked* devido a restrições do ambiente (ex.: ausência de persistência, feedback visual insuficiente).  
+- **Padronização em Gherkin:** Todos os cenários documentados no padrão `Given / When / Then`.  
+- **Priorização Baseada em Risco:** Testes categorizados por severidade e prioridade, considerando impacto ao usuário final.  
 
-- **Análise Exploratória da Interface:** Realizada navegação sistemática por todas as rotas disponíveis (`/new-course`, `/courses`) para mapear fluxos, identificar elementos interativos e possíveis pontos críticos.
-- **Cobertura Funcional Abrangente:** As histórias contemplam os principais fluxos do sistema — **criação de curso**, **listagem de cursos** e **exclusão de curso** — incluindo cenários de sucesso, falha e segurança.
-- **Validação Negativa e de Borda:** Foram definidos cenários para campos obrigatórios em branco, valores inválidos, tentativas de duplicidade, ataques XSS e simulação de falhas de rede, validando deste modo a robustez da aplicação.
-- **Observação de Limitações do Ambiente:** Alguns testes foram classificados como *Blocked* devido a restrições do ambiente, como ausência de persistência, feedback visual insuficiente ou falta de validações.
-- **Padronização em Gherkin:** Todos os cenários foram documentados no padrão `Given / When / Then`, promovendo clareza, padronização e facilidade de manutenção.
-- **Priorização Baseada em Risco:** Os testes foram categorizados por severidade e prioridade, considerando o impacto potencial ao usuário final e a criticidade das funcionalidades.
+---
 
 ### US1 – Criar Curso
 
-### Descrição
-Como usuário (sem autenticação), desejo cadastrar um novo curso na tela `/novo-curso`, garantindo validação de campos, prevenção de dados inválidos/maliciosos, integração correta com o backend, resiliência a diferentes tipos de dados, anexos e links, segurança e testabilidade em múltiplos navegadores.
+#### Descrição
+Como usuário (sem autenticação), desejo cadastrar um novo curso na tela `/new-course`, garantindo validação de campos, prevenção de dados inválidos/maliciosos, integração correta com o backend, resiliência a diferentes tipos de dados, anexos e links, segurança e testabilidade em múltiplos navegadores.
 
-> **Nota:** A aplicação não possui autenticação atualmente. Qualquer usuário pode criar cursos. Isso é uma **limitação de escopo** e uma **oportunidade de melhoria futura** para garantir a integridade da ferramenta.
+#### Atores
 
-### Atores
 - Usuário (sem autenticação): qualquer pessoa que acessa a aplicação.
 
-### Critérios de Aceite
+> **Nota:** A aplicação não possui autenticação atualmente. Qualquer usuário pode criar cursos. Isso é uma **limitação de escopo** e uma **oportunidade de melhoria futura**.
 
-#### Regras Funcionais
-- Campos obrigatórios: título, descrição.
-- Limite de caracteres: título ≤ 255; descrição ≤ 2000.
-- Datas: `start_date` deve ser anterior a `end_date`.
-- Vagas: campo numérico, valor maior que zero.
-- Unicidade: cursos duplicados tratados conforme regra de negócio.
-- URLs de imagem: inválidas ou quebradas exibem imagem padrão (placeholder).
-- Double submit: ao clicar duas vezes em “Salvar”, apenas um curso é criado.
+#### Critérios de Aceite
 
-#### Regras Não Funcionais
-- Mensagens de erro claras e localizadas (i18n).
-- Feedback visual consistente (loading, erros, confirmações).
-- Sanitização de inputs:
-    - Bloquear ou escapar tags perigosas (`<script>`, `<iframe>`, `<img onerror>`).
-    - Permitir tags inofensivas (`<b>`, `<i>`).
+**Regras Funcionais**
+- Campos obrigatórios: título, descrição.  
+- Limite de caracteres: título ≤ 255; descrição ≤ 2000.  
+- Datas: `start_date` deve ser anterior a `end_date`.  
+- Vagas: campo numérico, valor maior que zero.  
+- Unicidade: cursos duplicados tratados conforme regra de negócio.  
+- URLs de imagem: inválidas ou quebradas exibem imagem padrão (placeholder).  
+- Double submit: ao clicar duas vezes em “Salvar”, apenas um curso é criado.  
+
+**Regras Não Funcionais**
+- Mensagens de erro claras e localizadas (i18n).  
+- Feedback visual consistente (loading, erros, confirmações).  
+- Sanitização de inputs:  
+  - Bloquear ou escapar tags perigosas (`<script>`, `<iframe>`, `<img onerror>`).  
+  - Permitir tags inofensivas (`<b>`, `<i>`).  
+
+---
 
 ### US2 – Listar Cursos
 
-### Descrição
+#### Descrição
 Como usuário (sem autenticação), desejo visualizar os cursos cadastrados, com dados claros, ordenação adequada e feedback visual, incluindo tratamento de estados vazios, erros de rede e paginação.
 
-### Atores
+#### Atores
 - Usuário (sem autenticação): qualquer pessoa pode visualizar cursos.
 
-### Critérios de Aceite
+#### Critérios de Aceite
 
-#### Regras Funcionais
-- Listagem exibe título e trecho da descrição de cada curso.
-- Estado vazio: exibir mensagem “Nenhum curso encontrado”.
-- Após criação de curso (US1), ele aparece na listagem imediatamente ou após delay aceitável.
-- Indicador de carregamento até resposta da API.
-- Timeout/erro de rede: mensagem clara e opção de recarregar.
-- Paginação correta, mantendo ordenação estável.
+**Regras Funcionais**
+- A listagem deve exibir título, descrição resumida, instrutor, datas, vagas e imagem de capa.  
+- Estado vazio: exibir mensagem “Nenhum curso encontrado”.  
+- Após criação de curso (US1), ele deve aparecer na listagem imediatamente ou após delay aceitável.  
+- Indicador de carregamento exibido até resposta da API.  
+- Timeout/erro de rede: mensagem clara e opção de recarregar.  
+- Paginação correta, mantendo ordenação estável.  
+- Ordenação padrão: cursos mais recentes primeiro (data de início decrescente).  
 
-#### Regras Não Funcionais
-- Feedback visual: loading spinner até resposta da API.
-- Mensagens de erro claras e localizadas (i18n).
-- Tratamento de falhas de rede: mensagem de erro e botão de retry.
-- Consistência eventual documentada, se houver delay na replicação.
+**Regras Não Funcionais**
+- Feedback visual consistente (loading spinner até resposta da API).  
+- Mensagens de erro claras e localizadas (i18n).  
+- Tratamento de falhas de rede: mensagem de erro amigável e botão de retry.  
+- Consistência eventual documentada, se houver delay na replicação.  
+- Compatibilidade cross-browser: listagem deve renderizar corretamente em navegadores suportados.  
+
+---
 
 ### US3 – Excluir Curso
 
-### Descrição
+#### Descrição
 Como usuário, desejo remover um curso existente, com confirmação explícita, feedback claro e operação idempotente (repetição não causa efeitos colaterais).
 
 > **Nota:** Exclusão não está implementada na interface (botão não funcional). Só pode ser validada parcialmente via requisições diretas no DevTools. Gap de implementação registrado.
 
-### Atores
-- Usuário (sem autenticação): pode visualizar cursos.
-- Usuário com permissão de remoção: esperado em sistemas reais, não implementado neste escopo.
+#### Atores
+- Usuário (sem autenticação): pode visualizar cursos.  
+- Usuário com permissão de remoção: esperado em sistemas reais, não implementado neste escopo.  
 
-### Critérios de Aceite
+#### Critérios de Aceite
 
-- CA-1: Exclusão exige confirmação explícita (modal Confirmar/Cancelar).
-- CA-2: Após confirmação e sucesso, o curso desaparece da listagem.
-- CA-3: Repetir exclusão do mesmo recurso retorna erro claro (404) sem efeitos colaterais.
-- CA-4: Tentativa de excluir sem permissão retorna 403 e não remove o recurso.
-- CA-5: Em caso de erro de backend, a UI informa falha e mantém o item na lista.
-- CA-6: Operação deve registrar código HTTP apropriado (200/204 no sucesso, 404/403/500 conforme o caso).
+**Regras Funcionais**
+- Exclusão exige confirmação explícita (modal Confirmar/Cancelar).  
+- Após confirmação e sucesso, o curso desaparece da listagem.  
+- Repetir exclusão do mesmo recurso retorna erro claro (404) sem efeitos colaterais.  
+- Tentativa de excluir sem permissão retorna 403 e não remove o recurso.  
+- Em caso de erro de backend (500), a UI informa falha e mantém o item na lista.  
+- Operação deve registrar código HTTP apropriado (200/204 no sucesso, 404/403/500 conforme o caso).  
 
-## 🧠 Decisões Tomadas
+**Regras Não Funcionais**
+- Mensagens de erro claras e localizadas (i18n).  
+- Feedback visual consistente (loading, erros, confirmações).  
+- Operação deve ser idempotente: múltiplas requisições de exclusão não causam efeitos colaterais.  
 
-**Escopo definido**  
-- Funcionalidades testadas: `Create Course` (US1), `List Courses` (US2), `Delete Course` (US3)  
-- Cobertura inclui: validação de formulário, integração com API, tratamento de erros, segurança e compatibilidade entre navegadores
+## 📊 Resumo Executivo de Qualidade
 
-**Critérios de aceite gerais**  
-- Dados válidos devem ser aceitos e persistidos  
-- Dados inválidos devem ser rejeitados com mensagens claras  
-- Respostas da API devem retornar status HTTP corretos  
-- A interface deve refletir o estado do backend de forma consistente
-
-**Cobertura de testes**  
-- **Happy path**: criação, listagem e exclusão com dados válidos  
-- **Casos negativos**: campos inválidos, datas incorretas, URLs quebradas  
-- **Casos de borda**: limite de caracteres, duplicidade, `double submit`  
-- **Segurança**: XSS, tentativa de IDOR, falhas de backend
-
-**Priorização**  
-- Aplicado `Risk-Based Testing`:  
-  - Alta prioridade: validação de dados, segurança, integração com API  
-  - Média prioridade: mensagens de erro, feedback visual  
-  - Baixa prioridade: questões cosméticas
-
-**Abordagem de validação**  
-- Validação na **interface (UI)**: comportamento do formulário, mensagens de erro  
-- Validação na **API**: payload, status de resposta, consistência de dados  
-- Testes em múltiplos navegadores: Edge e Chrome  
-- Todas as execuções foram gravadas em vídeo (MP4) e linkadas na planilha
-
-## 💡 Melhorias Sugeridas
+Este relatório consolida o status da validação das User Stories, conforme critérios de aceite e resultados dos testes realizados. O objetivo é fornecer uma visão clara e objetiva sobre a qualidade do produto, destacando pontos críticos, conformidades e oportunidades de melhoria identificadas durante a análise.  
+O detalhamento completo, incluindo casos de teste, evidências, bugs e rastreabilidade, está disponível na [planilha de testes](https://docs.google.com/spreadsheets/d/117UMb9cgL2hvZKnPAlYS_xqoPKqJS3Jy8xluBRSShbo/edit?gid=0).
 
 ---
 
-## 📬 Agradecimentos
+### US1 – Criar Curso
+
+| Critério                              | Status         | Observações                                                                 |
+|----------------------------------------|----------------|----------------------------------------------------------------------------|
+| Campos obrigatórios                    | ❌ Falhou      | Validação insuficiente; campos não obrigatórios permitidos.                 |
+| Limite de caracteres                   | ❌ Falhou      | Não há restrição adequada; risco de overflow.                              |
+| Datas válidas                          | ❌ Falhou      | Aceita datas inválidas; pode comprometer integridade dos dados.            |
+| Vagas numéricas > 0                    | ❌ Falhou      | Permite valores nulos/negativos; impacto na lógica de negócio.             |
+| Unicidade de curso                     | ❌ Falhou      | Possível duplicidade de registros.                                         |
+| URLs de imagem                         | ❌ Falhou      | Aceita URLs inválidas; validação parcial implementada.                     |
+| Double submit                          | ✅ Passou      | previne envios duplicados; risco de inconsistência.                    |
+| Sanitização de inputs (XSS)            | ❌ Falhou      | Proteção adequada contra ataques XSS.                                      |
+| Mensagens de erro claras               | ❌ Falhou      | Mensagens genéricas; dificulta entendimento do usuário.                    |
+| Feedback visual                        | ❌ Falhou      | Não foi possível validar nesta rodada de testes.                           |
+
+---
+
+### US2 – Listar Cursos
+
+| Critério                               | Status         | Observações                                                                 |
+|----------------------------------------|----------------|-----------------------------------------------------------------------------|
+| Listagem com dados válidos             | ✅ Passou      | Dados exibidos corretamente.                                                |
+| Estado vazio                           | ✅ Passou*     | Comportamento adequado, porém com ressalvas documentadas.                   |
+| Ordenação por data                     | ⏳ Bloqueado   | Funcionalidade não disponível para teste.                                   |
+| Indicador de loading                   | ❌ Falhou      | Ausência de feedback visual durante carregamento.                           |
+| Paginação (>10 cursos)                 | ⏳ Bloqueado   | Não implementado ou indisponível para validação.                            |
+| Curso recém-criado aparece             | ✅ Passou*     | Exibe corretamente, com observações menores.                                |
+| Curso excluído desaparece              | ❌ Falhou      | Persistência de dados removidos; possível cache ou falha de atualização.    |
+| Cross-browser                          | ✅ Passou      | Comportamento consistente nos principais navegadores.                       |
+
+---
+
+### US3 – Excluir Curso
+
+| Critério                              | Status         | Observações                                                                 |
+|----------------------------------------|----------------|----------------------------------------------------------------------------|
+| Exclusão com confirmação               | ❌ Falhou      | Falta de confirmação; risco de exclusão acidental.                          |
+| Cancelar exclusão                      | ⏳ Bloqueado       | Não há opção de cancelar; experiência do usuário prejudicada.               |
+| Exclusão repetida (idempotência)       | ❌ Falhou      | Não trata múltiplas requisições; pode gerar erros inesperados.              |
+| Exclusão sem permissão (403)           | ⏳ Bloqueado   | Não foi possível validar restrições de permissão nesta rodada.              |
+
+### ✅ Resumo de Execução
+Foram planejados **29 casos de teste** cobrindo as User Stories de criação, listagem e exclusão de cursos.
+
+| Status   | Quantidade | %    |
+|----------|------------|------|
+| Passed   | 6          | 21%  |
+| Failed   | 15         | 52%  |
+| Blocked  | 8          | 27%  |
+| **Total**| 29         | 100% |
+
+---
+
+### 📌 Distribuição por User Story
+
+| User Story          | Casos Planejados | Passed | Failed | Blocked |
+|---------------------|------------------|--------|--------|---------|
+| US1 – Criar Curso   | 16               | 4      | 10     | 2       |
+| US2 – Listar Curso  | 9                | 3      | 2      | 4       |
+| US3 – Excluir Curso | 4                | 0      | 2      | 2       |
+
+---
+
+### 🚦 Distribuição por Severidade
+
+| Severidade | Quantidade | %    |
+|------------|------------|------|
+| Alta       | 9          | 43%  |
+| Média      | 8          | 38%  |
+| Baixa      | 4          | 19%  |
+
+---
+
+### 📈 Métricas de Qualidade
+- **Taxa de Sucesso**: 21% (6/29).  
+- **Taxa de Falha**: 52% (15/29).  
+- **Taxa de Bloqueio**: 27% (8/29).  
+
+---
+
+### 🔎 Observação Geral sobre Ambiente/Backend
+Durante os testes, foram identificados retornos recorrentes de **404 (Not Found)** em requisições de listagem e **405 (Method Not Allowed)** em requisições de exclusão.  
+Esses erros indicam que o frontend tenta acessar rotas inexistentes ou que o backend não implementa determinados métodos (como DELETE).  
+Esse comportamento impacta **todos os cenários de listagem e exclusão**, resultando em falhas ou bloqueios que refletem **limitações do ambiente de teste**, e não apenas bugs funcionais do frontend.
+
+---
+
+### ⚠️ Análise de Riscos
+- **Impacto alto**: criação de cursos sem validações, exclusão inconsistente, duplicidade de dados.  
+- **Impacto médio**: ausência de ordenação/paginação, vagas inválidas, URL de imagem não validada.  
+- **Impacto baixo**: ausência de loading, falhas visuais.  
+
+## 🐞 Relatório de Bugs
+
+### Metodologia utilizada
+Utilizei a classificação de *Severidade* (impacto no sistema) e *Prioridade* (urgência de correção) para organizar os bugs encontrados.  
+- *Severidade*: Crítico | Alto | Médio | Baixo  
+- *Prioridade*: Alta | Média | Baixa  
+
+### 🐞 Principais Bugs Identificados
+- **Validações de campos obrigatórios falhando** (título, descrição, datas, vagas).  
+- **Duplicidade de curso permitida**.  
+- **Exclusão não refletida na listagem** (curso continua aparecendo).  
+- **Falta de sanitização de entrada (XSS)** → risco de segurança.  
+- **Funcionalidades não implementadas**: paginação, ordenação, cancelamento de exclusão, controle de permissão.  
+- **Feedback visual ausente**: indicador de loading não exibido.  
+
+---
+
+### Bug 1 – Link da sala não exibido (US1 – Criar Curso)
+- *Descrição*: Ao criar curso com link válido, o link não aparece na listagem.  
+- *Passos para reproduzir*:  
+  1. Criar curso preenchendo todos os campos, incluindo link de inscrição válido.  
+  2. Salvar o curso.  
+  3. Verificar listagem de cursos.  
+- *Resultado esperado*: Link deveria aparecer na listagem com botão de acesso.  
+- *Resultado obtido*: Curso criado, mas link não aparece; não há botão de acesso; erro 404 registrado no console.  
+- *Severidade*: Alto  
+- *Prioridade*: Alta  
+- *Evidência*: [[link para o Drive](https://drive.google.com/drive/folders/1ddDH1xobSX0sFvMgwXwk0TDnhJPZOoE1?usp=sharing)]  
+
+---
+
+### Bug 2 – Duplicidade de curso permitida (US1 – Criar Curso)
+- *Descrição*: Sistema permite criar cursos com o mesmo título já existente.  
+- *Passos para reproduzir*:  
+  1. Criar curso com título "Curso QA".  
+  2. Criar outro curso com o mesmo título.  
+  3. Verificar listagem.  
+- *Resultado esperado*: Sistema deveria rejeitar criação duplicada e exibir mensagem de erro.  
+- *Resultado obtido*: Curso duplicado criado e listado normalmente.  
+- *Severidade*: Alto  
+- *Prioridade*: Alta  
+- *Evidência*: [link para evidência]  
+
+---
+
+### Bug 3 – Indicador de loading ausente (US2 – Listar Cursos)
+- *Descrição*: Ao carregar a listagem de cursos, não há indicador de carregamento.  
+- *Passos para reproduzir*:  
+  1. Acessar rota `/courses`.  
+  2. Observar comportamento durante carregamento.  
+- *Resultado esperado*: Exibir indicador de loading até finalização da busca.  
+- *Resultado obtido*: Nenhum indicador exibido; tela permanece estática até renderização.  
+- *Severidade*: Baixo  
+- *Prioridade*: Baixa  
+- *Evidência*: [link para evidência]  
+
+---
+
+### Bug 4 – Curso excluído continua aparecendo (US2/US3 – Exclusão)
+- *Descrição*: Após excluir curso, ele continua aparecendo na listagem.  
+- *Passos para reproduzir*:  
+  1. Criar curso válido.  
+  2. Excluir curso pela listagem.  
+  3. Recarregar listagem.  
+- *Resultado esperado*: Curso excluído não deveria mais aparecer.  
+- *Resultado obtido*: Curso permanece na listagem; console registra erro 405 (Method Not Allowed).  
+- *Severidade*: Alto  
+- *Prioridade*: Alta  
+- *Evidência*: [link para evidência]  
+
+---
+
+### Bug 5 – Exclusão repetida não tratada (US3 – Excluir Curso)
+- *Descrição*: Ao tentar excluir curso já removido, sistema não retorna mensagem clara.  
+- *Passos para reproduzir*:  
+  1. Excluir curso válido.  
+  2. Tentar excluir novamente o mesmo curso.  
+- *Resultado esperado*: Sistema deveria retornar 404 e informar que curso não existe mais.  
+- *Resultado obtido*: Nenhuma mensagem clara; comportamento inconsistente.  
+- *Severidade*: Alto  
+- *Prioridade*: Alta  
+- *Evidência*: [link para evidência]  
+
+---
+
+### Bug 6 – Falha de sanitização (XSS) (US1 – Criar Curso)
+- *Descrição*: Sistema aceita payload `<script>` em título e descrição.  
+- *Passos para reproduzir*:  
+  1. Criar curso com `<script>alert(1)</script>` no campo título e descrição.  
+  2. Salvar curso.  
+- *Resultado esperado*: Sistema deveria sanitizar entrada e exibir texto puro.  
+- *Resultado obtido*: Payload aceito; script não executado, mas não houve sanitização.  
+- *Severidade*: Alto (segurança)  
+- *Prioridade*: Alta  
+- *Evidência*: [link para evidência]  
+
+---
+
+## 📌 Observações finais
+- Os bugs foram documentados de forma padronizada para facilitar a análise.  
+- A priorização foi feita considerando impacto no usuário final e risco para o negócio.  
+- As evidências em vídeo estão disponíveis no link do Drive informado no README.
+
+## 💡 Melhorias Sugeridas
+
+Com base na análise detalhada dos testes (US1, US2 e US3), foram identificadas oportunidades relevantes para aprimorar a **qualidade, segurança e experiência do usuário**. As recomendações estão categorizadas por área de impacto:
+
+### 🔐 Autenticação e Controle de Acesso
+- Implementar autenticação robusta para restringir operações sensíveis (criação e exclusão de cursos).  
+- Definir perfis de acesso (administrador, instrutor, aluno) com permissões adequadas.  
+- Garantir que apenas usuários autorizados possam editar ou remover cursos, prevenindo acessos indevidos.  
+
+### 🖼️ Validação e Experiência do Usuário
+- Corrigir falhas de validação em campos obrigatórios (título, descrição, datas, vagas).  
+- Adicionar máscaras e validações em tempo real para datas, número de vagas e URLs.  
+- Exibir mensagens de erro claras e contextualizadas, evitando mensagens genéricas.  
+- Garantir feedback visual consistente (loading, confirmação, erro).  
+- Implementar fallback para imagens inválidas, evitando quebras na interface.  
+
+### 🌐 Robustez e Resiliência
+- Tratar erros de rede (404, 405, 500, timeout) com mensagens amigáveis e opção de retry.  
+- Garantir **idempotência** em operações críticas (múltiplos cliques em “Salvar” ou “Excluir”).  
+- Implementar logs de auditoria para rastrear ações relevantes (criação, edição, exclusão).  
+- Corrigir chamadas incorretas de rotas que resultam em **404** e ajustar endpoints que retornam **405** para exclusão.  
+
+### 📊 Usabilidade e Escalabilidade
+- Implementar paginação ou scroll infinito para listas com mais de 10 cursos.  
+- Adicionar filtros (por data, instrutor, status) e ordenação configurável (título, data, vagas).  
+- Garantir consistência eventual documentada em cenários de delay de backend.  
+
+### 🛡️ Segurança
+- Reforçar sanitização de entradas contra **XSS** e outros payloads maliciosos.  
+- Adotar **Content Security Policy (CSP)** para mitigar execução de scripts não autorizados.  
+- Validar e sanitizar URLs externas (imagens, links de inscrição) antes de persistência.  
+
+### 📱 Compatibilidade e Acessibilidade
+- Validar a aplicação em múltiplos navegadores e dispositivos móveis.  
+- Garantir conformidade com **WCAG 2.1** (navegação por teclado, leitores de tela).  
+- Implementar internacionalização (i18n) para suporte a múltiplos idiomas.  
+
+---
+
+## 📬 Conclusão e Agradecimentos:
+Este projeto demonstra um processo completo de análise e implementação de testes fundamentados a partir de uma bagagem profissional e pessoal. Em especial, foi uma experiência dinâmica e que me preparou ainda mais para mergulhar no universo da tecnologia, bem como, da qualidade. Este projeto foi desenvolvido com foco em clareza, organização e cobertura de cenários reais. A metodologia utilizada para análise de bugs foi definida para evidenciar as oportunidades de melhoria, falhas de seguranças e de rotas que não condizem com o objetivo da ferramenta. 
 
  
  
