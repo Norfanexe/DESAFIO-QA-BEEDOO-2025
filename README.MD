@@ -1,13 +1,13 @@
 # Desafio QA Beedoo 2025
 
-![Status](https://img.shields.io/badge/status-em%20andamento-yellow)
+![Status](https://img.shields.io/badge/status-completo-brightgreen)
 ![Stage](https://img.shields.io/badge/Desafio-ETAPA%201%20%2B%202-blueviolet)
 
-![Coverage](https://img.shields.io/badge/test%20coverage-85%25-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Coverage](https://img.shields.io/badge/test%20coverage-100%25-brightgreen)
+![Build](https://img.shields.io/badge/build-completo-brightgreen)
 
-![Methodology](https://img.shields.io/badge/methodology-ISTQB%20%2B%20Exploratory-orange)
-![Tests](https://img.shields.io/badge/tests-Manuais%20%7C%20Exploratórios-lightgrey)
+![Methodology](https://img.shields.io/badge/methodology-ISTQB%20%2B%20Explorat%C3%B3rio-orange)
+![Tests](https://img.shields.io/badge/tests-Manuais%20%7C%20Explorat%C3%B3rios-lightgrey)
 
 ![Tools](https://img.shields.io/badge/tools-DevTools%20%7C%20Sheets%20%7C%20Drive-informational)
 ![Platform](https://img.shields.io/badge/platform-Web%20App-green)
@@ -119,16 +119,14 @@ Os cenários e casos de teste estão organizados por User Story (US1, US2, US3),
 Cada registro contempla os seguintes campos obrigatórios:  
 - **BugId**  
 - **StoryId**  
-- **TC-Relacionado**  
-- **Título/Resumo**  
-- **Descrição Curta**  
-- **Resultado Esperado**  
-- **Resultado Obtido**  
-- **Evidências (links)**  
+- **Title / Summary**  
+- **Description**  
+- **Expected Result**  
+- **Actual Result**  
+- **Evidence (link)**  
 - **Severity**  
 - **Priority**  
-- **Observações Adicionais**  
-- **Metodologia**
+- **Methodology**
 
 Além dos cenários previstos, foram identificados bugs em situações de validação negativa, ausência de persistência de dados e falhas de feedback visual. Todos os registros encontram-se organizados na planilha e devidamente referenciados no README do projeto e evidências gravadas.
 
