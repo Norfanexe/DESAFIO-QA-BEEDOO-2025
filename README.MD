@@ -22,8 +22,6 @@
 - [Estrutura do Repositório](#-estrutura-do-repositório)
 - [Instruções de Execução](#-instruções-de-execução)
 - [Planilha de Casos de Teste](#-planilha-de-casos-de-teste)
-- [Processo de Execução dos Testes](#-processo-de-execução-dos-testes)
-- [Metodologia para Relato de Bugs](#-metodologia-para-relato-de-bugs)
 - [Estratégia adotada para os Casos de Teste](#-estratégia-adotada-para-os-casos-de-teste)
 - [User Stories](#-user-stories)
 - [Resumo Executivo de Qualidade](#-resumo-executivo-de-qualidade)
@@ -542,7 +540,7 @@ Com base na análise dos testes, critérios de aceite e documentação das User 
 ---
 
 ## 📬 Conclusão e Agradecimentos:
-Este projeto demonstra um processo completo de análise e implementação de testes fundamentados a partir de uma bagagem profissional e pessoal. Em especial, foi uma experiência dinâmica e que me preparou ainda mais para mergulhar no universo da tecnologia, bem como, da qualidade. Este projeto foi desenvolvido com foco em clareza, organização e cobertura de cenários reais. A metodologia utilizada para análise de bugs foi definida para evidenciar as oportunidades de melhoria, falhas de seguranças e de rotas que não condizem com o objetivo da ferramenta. 
+Este projeto demonstra um processo completo de análise e implementação de testes fundamentados a partir de uma bagagem profissional e pessoal. Em especial, foi uma experiência dinâmica e que me preparou ainda mais para mergulhar no universo da tecnologia, bem como, da qualidade. Este projeto foi desenvolvido com foco em clareza, organização e cobertura de cenários reais. A metodologia utilizada para análise de bugs foi definida para evidenciar as oportunidades de melhoria, falhas de seguranças e de rotas que não condizem com o objetivo da ferramenta. Agradeço pela oportunidade e desafio proposto. O processo até aqui foi de grande experiência para mim e melhoria das minhas técnicas como um profissional.
 
  
  
