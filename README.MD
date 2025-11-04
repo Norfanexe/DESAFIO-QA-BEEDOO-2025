@@ -473,40 +473,71 @@ Utilizei a classificação de *Severidade* (impacto no sistema) e *Prioridade* (
 
 ## 💡 Melhorias Sugeridas
 
-Com base na análise detalhada dos testes (US1, US2 e US3), foram identificadas oportunidades relevantes para aprimorar a **qualidade, segurança e experiência do usuário**. As recomendações estão categorizadas por área de impacto:
+Com base na análise dos testes, critérios de aceite e documentação das User Stories (US1, US2, US3), as recomendações de melhoria foram organizadas conforme o fluxo funcional do sistema, promovendo rastreabilidade e foco em qualidade:
 
-### 🔐 Autenticação e Controle de Acesso
-- Implementar autenticação robusta para restringir operações sensíveis (criação e exclusão de cursos).  
-- Definir perfis de acesso (administrador, instrutor, aluno) com permissões adequadas.  
-- Garantir que apenas usuários autorizados possam editar ou remover cursos, prevenindo acessos indevidos.  
+---
 
-### 🖼️ Validação e Experiência do Usuário
-- Corrigir falhas de validação em campos obrigatórios (título, descrição, datas, vagas).  
-- Adicionar máscaras e validações em tempo real para datas, número de vagas e URLs.  
-- Exibir mensagens de erro claras e contextualizadas, evitando mensagens genéricas.  
-- Garantir feedback visual consistente (loading, confirmação, erro).  
-- Implementar fallback para imagens inválidas, evitando quebras na interface.  
+### US1 – Criar Curso
 
-### 🌐 Robustez e Resiliência
-- Tratar erros de rede (404, 405, 500, timeout) com mensagens amigáveis e opção de retry.  
-- Garantir **idempotência** em operações críticas (múltiplos cliques em “Salvar” ou “Excluir”).  
-- Implementar logs de auditoria para rastrear ações relevantes (criação, edição, exclusão).  
-- Corrigir chamadas incorretas de rotas que resultam em **404** e ajustar endpoints que retornam **405** para exclusão.  
+**Validação e Experiência do Usuário**
+- Corrigir validação de campos obrigatórios (título, descrição, datas, vagas), conforme critérios de aceite.
+- Adicionar máscaras e validações em tempo real para datas, número de vagas e URLs.
+- Exibir mensagens de erro claras, específicas e localizadas (i18n), evitando mensagens genéricas.
+- Garantir feedback visual consistente (loading, confirmação, erro) durante o cadastro.
+- Implementar fallback para imagens inválidas, evitando quebras na interface.
+- Prevenir duplicidade de cursos (unicidade de título ou regra de negócio definida).
+- Reforçar sanitização de entradas para bloquear XSS e outros payloads maliciosos.
+- Validar e sanitizar URLs externas (imagens, links de inscrição) antes de persistência.
+- Garantir idempotência na operação de criação (double submit).
 
-### 📊 Usabilidade e Escalabilidade
-- Implementar paginação ou scroll infinito para listas com mais de 10 cursos.  
-- Adicionar filtros (por data, instrutor, status) e ordenação configurável (título, data, vagas).  
-- Garantir consistência eventual documentada em cenários de delay de backend.  
+**Segurança**
+- Implementar autenticação e controle de acesso para restringir criação a usuários autorizados.
+- Adotar Content Security Policy (CSP) para mitigar execução de scripts não autorizados.
 
-### 🛡️ Segurança
-- Reforçar sanitização de entradas contra **XSS** e outros payloads maliciosos.  
-- Adotar **Content Security Policy (CSP)** para mitigar execução de scripts não autorizados.  
-- Validar e sanitizar URLs externas (imagens, links de inscrição) antes de persistência.  
+---
 
-### 📱 Compatibilidade e Acessibilidade
-- Validar a aplicação em múltiplos navegadores e dispositivos móveis.  
-- Garantir conformidade com **WCAG 2.1** (navegação por teclado, leitores de tela).  
-- Implementar internacionalização (i18n) para suporte a múltiplos idiomas.  
+### US2 – Listar Cursos
+
+**Usabilidade e Escalabilidade**
+- Implementar paginação ou scroll infinito para listas com mais de 10 cursos.
+- Adicionar filtros (por data, instrutor, status) e ordenação configurável (título, data, vagas).
+- Garantir ordenação padrão conforme critérios de aceite (data de início decrescente).
+- Exibir indicador de loading durante carregamento da lista.
+- Tratar estado vazio com mensagem amigável (“Nenhum curso encontrado”).
+- Garantir atualização imediata da lista após criação/exclusão de cursos.
+
+**Robustez**
+- Tratar erros de rede (404, 500, timeout) com mensagens amigáveis e opção de retry.
+- Corrigir chamadas de rotas que resultam em 404 e ajustar endpoints para evitar 405 em exclusão.
+
+**Compatibilidade e Acessibilidade**
+- Validar renderização em múltiplos navegadores e dispositivos móveis.
+- Garantir conformidade com WCAG 2.1 (acessibilidade).
+
+---
+
+### US3 – Excluir Curso
+
+**Funcionalidade e Segurança**
+- Implementar exclusão com confirmação explícita (modal Confirmar/Cancelar).
+- Garantir operação idempotente: múltiplas requisições de exclusão não causam efeitos colaterais.
+- Exibir mensagens de erro claras para tentativas de exclusão inválidas (404, 403, 500).
+- Garantir que apenas usuários autorizados possam excluir cursos (controle de permissão).
+- Atualizar listagem imediatamente após exclusão bem-sucedida.
+
+**Auditoria**
+- Implementar logs de auditoria para rastrear ações de exclusão.
+
+---
+
+### Gerais (Transversais)
+
+- Implementar internacionalização (i18n) para suporte a múltiplos idiomas.
+- Documentar consistência eventual em cenários de delay do backend.
+- Garantir fallback visual para falhas de carregamento de recursos.
+- Adotar logs centralizados para rastreabilidade de falhas e ações críticas.
+
+---
 
 ---
 
