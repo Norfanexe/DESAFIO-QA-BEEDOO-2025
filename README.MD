@@ -274,85 +274,85 @@ Como usuário, desejo remover um curso existente, com confirmação explícita, 
 Este relatório consolida o status da validação das User Stories, conforme critérios de aceite e resultados dos testes realizados. O objetivo é fornecer uma visão clara e objetiva sobre a qualidade do produto, destacando pontos críticos, conformidades e oportunidades de melhoria identificadas durante a análise.  
 O detalhamento completo, incluindo casos de teste, evidências, bugs e rastreabilidade, está disponível na [planilha de testes](https://docs.google.com/spreadsheets/d/117UMb9cgL2hvZKnPAlYS_xqoPKqJS3Jy8xluBRSShbo/edit?gid=0).
 
----
+  ---
 
-### US1 – Criar Curso
+  ### US1 – Criar Curso
 
-| Critério                              | Status         | Observações                                                                 |
-|----------------------------------------|----------------|----------------------------------------------------------------------------|
-| Campos obrigatórios                    | ❌ Falhou      | Validação insuficiente; campos não obrigatórios permitidos.                 |
-| Limite de caracteres                   | ❌ Falhou      | Não há restrição adequada; risco de overflow.                              |
-| Datas válidas                          | ❌ Falhou      | Aceita datas inválidas; pode comprometer integridade dos dados.            |
-| Vagas numéricas > 0                    | ❌ Falhou      | Permite valores nulos/negativos; impacto na lógica de negócio.             |
-| Unicidade de curso                     | ❌ Falhou      | Possível duplicidade de registros.                                         |
-| URLs de imagem                         | ❌ Falhou      | Aceita URLs inválidas; validação parcial implementada.                     |
-| Double submit                          | ✅ Passou      | previne envios duplicados; risco de inconsistência.                    |
-| Sanitização de inputs (XSS)            | ❌ Falhou      | Proteção adequada contra ataques XSS.                                      |
-| Mensagens de erro claras               | ❌ Falhou      | Mensagens genéricas; dificulta entendimento do usuário.                    |
-| Feedback visual                        | ❌ Falhou      | Não foi possível validar nesta rodada de testes.                           |
+  | Critério                              | Status         | Observações                                                                 |
+  |----------------------------------------|----------------|----------------------------------------------------------------------------|
+  | Campos obrigatórios                    | ❌ Falhou      | Validação insuficiente; campos não obrigatórios permitidos.                 |
+  | Limite de caracteres                   | ❌ Falhou      | Não há restrição adequada; risco de overflow.                              |
+  | Datas válidas                          | ❌ Falhou      | Aceita datas inválidas; pode comprometer integridade dos dados.            |
+  | Vagas numéricas > 0                    | ❌ Falhou      | Permite valores nulos/negativos; impacto na lógica de negócio.             |
+  | Unicidade de curso                     | ❌ Falhou      | Possível duplicidade de registros.                                         |
+  | URLs de imagem                         | ❌ Falhou      | Aceita URLs inválidas; validação parcial implementada.                     |
+  | Double submit                          | ✅ Passou      | previne envios duplicados; risco de inconsistência.                    |
+  | Sanitização de inputs (XSS)            | ❌ Falhou      | Proteção adequada contra ataques XSS.                                      |
+  | Mensagens de erro claras               | ❌ Falhou      | Mensagens genéricas; dificulta entendimento do usuário.                    |
+  | Feedback visual                        | ❌ Falhou      | Não foi possível validar nesta rodada de testes.                           |
 
----
+  ---
 
-### US2 – Listar Cursos
+  ### US2 – Listar Cursos
 
-| Critério                               | Status         | Observações                                                                 |
-|----------------------------------------|----------------|-----------------------------------------------------------------------------|
-| Listagem com dados válidos             | ✅ Passou      | Dados exibidos corretamente.                                                |
-| Estado vazio                           | ✅ Passou*     | Comportamento adequado, porém com ressalvas documentadas.                   |
-| Ordenação por data                     | ⏳ Bloqueado   | Funcionalidade não disponível para teste.                                   |
-| Indicador de loading                   | ❌ Falhou      | Ausência de feedback visual durante carregamento.                           |
-| Paginação (>10 cursos)                 | ⏳ Bloqueado   | Não implementado ou indisponível para validação.                            |
-| Curso recém-criado aparece             | ✅ Passou*     | Exibe corretamente, com observações menores.                                |
-| Curso excluído desaparece              | ❌ Falhou      | Persistência de dados removidos; possível cache ou falha de atualização.    |
-| Cross-browser                          | ✅ Passou      | Comportamento consistente nos principais navegadores.                       |
+  | Critério                               | Status         | Observações                                                                 |
+  |----------------------------------------|----------------|-----------------------------------------------------------------------------|
+  | Listagem com dados válidos             | ✅ Passou      | Dados exibidos corretamente.                                                |
+  | Estado vazio                           | ✅ Passou*     | Comportamento adequado, porém com ressalvas documentadas.                   |
+  | Ordenação por data                     | ⏳ Bloqueado   | Funcionalidade não disponível para teste.                                   |
+  | Indicador de loading                   | ❌ Falhou      | Ausência de feedback visual durante carregamento.                           |
+  | Paginação (>10 cursos)                 | ⏳ Bloqueado   | Não implementado ou indisponível para validação.                            |
+  | Curso recém-criado aparece             | ✅ Passou*     | Exibe corretamente, com observações menores.                                |
+  | Curso excluído desaparece              | ❌ Falhou      | Persistência de dados removidos; possível cache ou falha de atualização.    |
+  | Cross-browser                          | ✅ Passou      | Comportamento consistente nos principais navegadores.                       |
 
----
+  ---
 
-### US3 – Excluir Curso
+  ### US3 – Excluir Curso
 
-| Critério                              | Status         | Observações                                                                 |
-|----------------------------------------|----------------|----------------------------------------------------------------------------|
-| Exclusão com confirmação               | ❌ Falhou      | Falta de confirmação; risco de exclusão acidental.                          |
-| Cancelar exclusão                      | ⏳ Bloqueado       | Não há opção de cancelar; experiência do usuário prejudicada.               |
-| Exclusão repetida (idempotência)       | ❌ Falhou      | Não trata múltiplas requisições; pode gerar erros inesperados.              |
-| Exclusão sem permissão (403)           | ⏳ Bloqueado   | Não foi possível validar restrições de permissão nesta rodada.              |
+  | Critério                              | Status         | Observações                                                                 |
+  |----------------------------------------|----------------|----------------------------------------------------------------------------|
+  | Exclusão com confirmação               | ❌ Falhou      | Falta de confirmação; risco de exclusão acidental.                          |
+  | Cancelar exclusão                      | ⏳ Bloqueado       | Não há opção de cancelar; experiência do usuário prejudicada.               |
+  | Exclusão repetida (idempotência)       | ❌ Falhou      | Não trata múltiplas requisições; pode gerar erros inesperados.              |
+  | Exclusão sem permissão (403)           | ⏳ Bloqueado   | Não foi possível validar restrições de permissão nesta rodada.              |
 
-### ✅ Resumo de Execução
-Foram planejados **29 casos de teste** cobrindo as User Stories de criação, listagem e exclusão de cursos.
+  ### ✅ Resumo de Execução
+  Foram planejados **26 casos de teste** cobrindo as User Stories de criação, listagem e exclusão de cursos.
 
-| Status   | Quantidade | %    |
-|----------|------------|------|
-| Passed   | 6          | 21%  |
-| Failed   | 15         | 52%  |
-| Blocked  | 8          | 27%  |
-| **Total**| 29         | 100% |
+  | Status   | Quantidade | %    |
+  |----------|------------|------|
+  | Passed   | 7          | 27%  |
+  | Failed   | 14         | 54%  |
+  | Blocked  | 5          | 19%  |
+  | **Total**| 26         | 100% |
 
----
+  ---
 
-### 📌 Distribuição por User Story
+  ### 📌 Distribuição por User Story
 
-| User Story          | Casos Planejados | Passed | Failed | Blocked |
-|---------------------|------------------|--------|--------|---------|
-| US1 – Criar Curso   | 16               | 4      | 10     | 2       |
-| US2 – Listar Curso  | 9                | 3      | 2      | 4       |
-| US3 – Excluir Curso | 4                | 0      | 2      | 2       |
+  | User Story          | Casos Planejados | Passed | Failed | Blocked |
+  |---------------------|------------------|--------|--------|---------|
+  | US1 – Criar Curso   | 16               | 4      | 11     | 1       |
+  | US2 – Listar Curso  | 6                | 3      | 1      | 2       |
+  | US3 – Excluir Curso | 4                | 0      | 2      | 2       |
 
----
+  ---
 
-### 🚦 Distribuição por Severidade
+  ### 🚦 Distribuição por Severidade
 
-| Severidade | Quantidade | %    |
-|------------|------------|------|
-| Alta       | 9          | 43%  |
-| Média      | 8          | 38%  |
-| Baixa      | 4          | 19%  |
+  | Severidade | Quantidade | %    |
+  |------------|------------|------|
+  | Alta       | 15         | 58%  |
+  | Média      | 8          | 31%  |
+  | Baixa      | 2          | 8%   |
 
----
+  ---
 
-### 📈 Métricas de Qualidade
-- **Taxa de Sucesso**: 21% (6/29).  
-- **Taxa de Falha**: 52% (15/29).  
-- **Taxa de Bloqueio**: 27% (8/29).  
+  ### 📈 Métricas de Qualidade
+  - **Taxa de Sucesso**: 27% (7/26).  
+  - **Taxa de Falha**: 54% (14/26).  
+  - **Taxa de Bloqueio**: 19% (5/26).  
 
 ---
 
