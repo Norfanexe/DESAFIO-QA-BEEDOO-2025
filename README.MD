@@ -1,41 +1,110 @@
 # Desafio QA Beedoo 2025
 
-![Status](https://img.shields.io/badge/status-completo-brightgreen)
-![Stage](https://img.shields.io/badge/Desafio-ETAPA%201%20%2B%202-blueviolet)
+# 🧭 Sumário
 
-![Coverage](https://img.shields.io/badge/test%20coverage-100%25-brightgreen)
-![Build](https://img.shields.io/badge/build-completo-brightgreen)
+- [📌 Objetivo](#-objetivo)
+- [📈 Dashboard](#-dashboard)
+- [⭐ Destaques do Projeto](#-destaques-do-projeto)
+- [🏗️ Arquitetura do Projeto](#️-arquitetura-do-projeto)
+  - [📂 Estrutura do Repositório](#-estrutura-do-repositório)
+  - [📂 Ambiente de Teste](#-Ambiente-de-Teste)
+  - [🛠️ Ferramentas Utilizadas](#️-ferramentas-utilizadas)
+  - [🎯 Escopo](#-escopo)
+  - [🎯 Fora do Escopo](#Fora-do-escopo)
+  - [🛠️ Instruções de Execução](#️-instruções-de-execução)
 
-![Methodology](https://img.shields.io/badge/methodology-ISTQB%20%2B%20Explorat%C3%B3rio-orange)
-![Tests](https://img.shields.io/badge/tests-Manuais%20%7C%20Explorat%C3%B3rios-lightgrey)
+- [📊 Planilha de Casos de Teste](#-planilha-de-casos-de-teste)
+- [▶️ Estrutura da Documentação](#️-Estrutura-da-Documentação)
+  - [▶️ Processo de Execução dos Testes](#️-processo-de-execução-dos-testes)
+  - [🐞 Metodologia para Relato de Bugs](#-metodologia-para-relato-de-bugs)
+  - [✅ Estratégia adotada para os Casos de Teste](#-estratégia-adotada-para-os-casos-de-teste)
 
-![Tools](https://img.shields.io/badge/tools-DevTools%20%7C%20Sheets%20%7C%20Drive-informational)
-![Platform](https://img.shields.io/badge/platform-Web%20App-green)
-![Environment](https://img.shields.io/badge/environment-Staging-yellowgreen)
+- [📖 Regras de Negócio](#-regras-de-negócio)
+- [⚙️ Requisitos Funcionais](#️-requisitos-funcionais)
+- [📋 User Stories](#-user-stories)
 
-![Evidence](https://img.shields.io/badge/evidence-MP4%20%7C%20Drive-success)
-![License](https://img.shields.io/badge/license-MIT-blue)
+- [📊 Resumo de Qualidade](#-Resumo-de-Qualidade)
+  - [🔗 Matriz de Rastreabilidade](#-matriz-de-rastreabilidade)
+  - [📈 Métricas de Qualidade](#-métricas-de-qualidade)
+  - [⚠️ Análise de Riscos](#️-análise-de-riscos)
 
-## 🧭 Sumário
+- [🐞 Relatório de Bugs](#-relatório-de-bugs)
+- [📊 Relatório de Distribuição por Tipo de Bug](#-relatório-de-distribuição-por-tipo-de-bug)
 
-- [Descrição do Projeto](#-descrição-do-projeto)
-- [Estrutura do Repositório](#-estrutura-do-repositório)
-- [Instruções de Execução](#-instruções-de-execução)
-- [Planilha de Casos de Teste](#-planilha-de-casos-de-teste)
-- [Estratégia adotada para os Casos de Teste](#-estratégia-adotada-para-os-casos-de-teste)
-- [User Stories](#-user-stories)
-- [Resumo Executivo de Qualidade](#-resumo-executivo-de-qualidade)
-- [Relatório de Bugs](#-relatório-de-bugs)
-- [Relatório de Distribuição por Tipo de Bug](#-relatório-de-distribuição-por-tipo-de-bugs)
-- [Observações finais](#-observações-finais)
-- [Melhorias Sugeridas](#-melhorias-sugeridas)
-- [Conclusão e Agradecimentos](#-conclusão-e-agradecimentos)
+- [📌 Observações Finais](#-observações-finais)
+- [💡 Melhorias Sugeridas](#-melhorias-sugeridas)
+- [📬 Conclusão](#-Conclusão)
 
-## 📌 Descrição do Projeto
+## 📌 Objetivo
 
-Este repositório apresenta a solução desenvolvida para o **Desafio de Analista de Qualidade de Software Júnior da Beedoo**. O objetivo central é demonstrar competências em **testes manuais**, **documentação estruturada**, **análise crítica de bugs** e **raciocínio orientado à qualidade de software** na prática em uma ferramenta web.
+Este projeto foi desenvolvido como solução para o desafio técnico de Analista de Qualidade de Software da Beedoo, com o objetivo de demonstrar conhecimentos em Engenharia de Testes, planejamento, documentação, execução manual, análise de defeitos e rastreabilidade de requisitos.
 
-## 📂 Estrutura do Repositório
+A proposta vai além da simples execução de testes, apresentando um processo completo de Garantia da Qualidade baseado em boas práticas recomendadas pelo ISTQB, técnicas exploratórias e testes orientados a risco (Risk-Based Testing).
+
+Todo o projeto foi estruturado para simular a documentação utilizada em equipes profissionais de QA, contemplando planejamento, casos de teste, cenários BDD, relatório de bugs, métricas, evidências e recomendações de melhoria.
+
+## 📈 Dashboard 
+
+| Indicador | Resultado |
+|------------|----------:|
+| User Stories | 3 |
+| Casos de Teste | 26 |
+| Bugs encontrados | 20 |
+| Passed | 7 |
+| Failed | 14 |
+| Blocked | 5 |
+| Cobertura dos Requisitos | 100% |
+| Severidade Alta | 60% |
+| Severidade Média | 32% |
+| Severidade Baixa | 8% |
+
+Foram elaborados 26 casos de teste, distribuídos entre três User Stories, resultando na identificação de 20 defeitos, dos quais 60% possuem severidade alta. Os resultados indicam cobertura funcional completa do escopo analisado e evidenciam oportunidades relevantes de melhoria nas validações de negócio e na robustez da aplicação.
+
+## ⭐ Destaques do Projeto
+
+✔ Planejamento completo de testes
+
+✔ 26 Casos de Teste
+
+✔ 20 Bugs documentados
+
+✔ Cenários em Gherkin
+
+✔ Testes Exploratórios
+
+✔ Risk-Based Testing
+
+✔ ISTQB
+
+✔ Relatórios executivos
+
+✔ Evidências em vídeo
+
+✔ Dashboards de resultados
+
+✔ Métricas de Qualidade
+
+✔ Documentação completa
+
+## 🏗️ Arquitetura do Projeto
+
+O projeto foi organizado seguindo uma estrutura voltada para rastreabilidade e facilidade de manutenção.
+
+README
+│
+├── Features (BDD)
+│
+├── Casos de Teste
+│
+├── Evidências
+│
+├── Relatórios
+│
+├── Dashboards
+│
+└── Melhorias
+
+### 📂 Estrutura do Repositório
 
 A estrutura deste repositório foi cuidadosamente planejada para promover **clareza, rastreabilidade e excelência profissional** em todas as etapas do ciclo de qualidade de software. Cada diretório e arquivo possui um propósito definido, facilitando a colaboração, manutenção e auditoria dos artefatos.
 
@@ -60,7 +129,7 @@ DESAFIO-QA-BEEDOO-2025/
 ```
 > Esta organização visa garantir a máxima transparência, facilitar auditorias e suportar a evolução contínua dos processos de qualidade.
 
-### Ambiente de Teste
+### 📂 Ambiente de Teste
 
 - **Aplicação:** https://creative-sherbet-a51eac.netlify.app/  
 - **Sistema Operacional:** Windows 11 Pro 22H2  
@@ -68,6 +137,69 @@ DESAFIO-QA-BEEDOO-2025/
 - **Resolução:** 1360x720 
 - **Ferramentas:** DevTools (Network / Console); gravação: microsoft clipchamp (MP4), 60 FPS, 1360x720, codec H.264  
 - **Observações:** limpar cache e cookies antes de cada execução da suíte; desabilitar extensões do navegador.
+
+### 🛠️ Ferramentas Utilizadas
+
+| Categoria | Ferramenta |
+|------------|------------|
+| Testes | Testes Manuais |
+| Metodologia | ISTQB |
+| Técnica | Testes Exploratórios |
+| Técnica | Risk-Based Testing |
+| Documentação | Google Sheets |
+| BDD | Gherkin |
+| Navegador | Google Chrome |
+| DevTools | Chrome DevTools |
+| Evidências | Microsoft Clipchamp |
+| Versionamento | Git / GitHub |
+
+### 🎯 Escopo
+
+Foram avaliadas três funcionalidades principais da aplicação:
+
+- Criação de cursos
+
+- Listagem de cursos
+
+- Exclusão de cursos
+
+Cada funcionalidade foi analisada sob diferentes perspectivas:
+
+- Funcional
+
+- Negativa
+
+- Segurança
+
+- Validação
+
+- Experiência do usuário
+
+- Regras de negócio
+
+- Robustez
+
+- Performance
+
+- Usabilidade
+
+# 🚫 Fora do Escopo
+
+Não fizeram parte desta avaliação:
+
+- Testes automatizados
+
+- Testes de carga
+
+- Testes de stress
+
+- Testes mobile
+
+- Testes de acessibilidade completos
+
+- Integração com ambientes produtivos
+
+- Testes de autenticação (funcionalidade inexistente)
 
 ## 🛠️ Instruções de Execução
 
@@ -176,6 +308,52 @@ Esse comportamento afeta **todos os cenários relacionados à listagem e exclus�
 
 > A definição das metodologias, não exatamente define que um determinado teste usou uma unica metodologia. O objetivo deste registro é demonstrar o caminho base utilizado para definir os testes, e é correto pensar que ambas as metodologias acima, em conjunto, gerou a completude deste documento.
 
+# 📖 Regras de Negócio
+
+As regras de negócio abaixo representam os comportamentos esperados da aplicação e servem como base para elaboração dos casos de teste, cenários BDD e validação dos requisitos funcionais.
+
+| ID | Regra de Negócio |
+|----|------------------|
+| RN-001 | O título do curso é obrigatório. |
+| RN-002 | A descrição do curso é obrigatória. |
+| RN-003 | O título deve possuir no máximo 255 caracteres. |
+| RN-004 | A descrição deve possuir no máximo 2000 caracteres. |
+| RN-005 | A data de início deve ser anterior à data de término. |
+| RN-006 | O número de vagas deve ser maior que zero. |
+| RN-007 | Não deve ser permitido cadastrar cursos duplicados. |
+| RN-008 | URLs inválidas devem utilizar uma imagem padrão (placeholder). |
+| RN-009 | A aplicação deve impedir múltiplos envios simultâneos (double submit). |
+| RN-010 | Campos de texto devem ser protegidos contra ataques XSS. |
+| RN-011 | A listagem deve exibir todos os cursos cadastrados. |
+| RN-012 | A listagem deve apresentar estado vazio quando não houver registros. |
+| RN-013 | Os cursos devem ser apresentados em ordem cronológica definida pela regra do negócio. |
+| RN-014 | A exclusão de um curso deve exigir confirmação do usuário. |
+| RN-015 | Após excluir um curso, ele não deve permanecer na listagem. |
+| RN-016 | A operação de exclusão deve ser idempotente. |
+| RN-017 | Apenas usuários autorizados devem excluir cursos. |
+
+# ⚙️ Requisitos Funcionais
+
+Os requisitos funcionais descrevem as funcionalidades esperadas da aplicação e estão diretamente relacionados às regras de negócio, User Stories e casos de teste.
+
+| ID | Requisito Funcional |
+|----|---------------------|
+| RF-001 | Permitir o cadastro de cursos. |
+| RF-002 | Validar campos obrigatórios durante o cadastro. |
+| RF-003 | Validar regras de datas do curso. |
+| RF-004 | Validar quantidade de vagas. |
+| RF-005 | Impedir cadastro duplicado. |
+| RF-006 | Validar URLs de imagem. |
+| RF-007 | Sanitizar entradas do usuário. |
+| RF-008 | Listar cursos cadastrados. |
+| RF-009 | Exibir estado vazio quando não houver cursos. |
+| RF-010 | Ordenar cursos conforme regra estabelecida. |
+| RF-011 | Exibir indicadores de carregamento. |
+| RF-012 | Permitir exclusão de cursos. |
+| RF-013 | Solicitar confirmação antes da exclusão. |
+| RF-014 | Atualizar a listagem após exclusão. |
+| RF-015 | Controlar permissões de exclusão. |
+
 ## 📋 User Stories
 
 ### 📌 Metodologia para Definição das User Stories
@@ -191,7 +369,11 @@ As User Stories foram elaboradas a partir de uma análise funcional detalhada do
 
 ---
 
-### US1 – Criar Curso
+## 📚 US1 – Criar Curso
+
+**Requisitos relacionados:** RF-001 ao RF-007
+
+**Regras de negócio relacionadas:** RN-001 ao RN-010
 
 #### Descrição
 Como usuário (sem autenticação), desejo cadastrar um novo curso na tela `/new-course`, garantindo validação de campos, prevenção de dados inválidos/maliciosos, integração correta com o backend, resiliência a diferentes tipos de dados, anexos e links, segurança e testabilidade em múltiplos navegadores.
@@ -222,7 +404,11 @@ Como usuário (sem autenticação), desejo cadastrar um novo curso na tela `/new
 
 ---
 
-### US2 – Listar Cursos
+## 📚 US2 – Listar Cursos
+
+**Requisitos relacionados:** RF-008 ao RF-011
+
+**Regras de negócio relacionadas:** RN-011 ao RN-013
 
 #### Descrição
 Como usuário (sem autenticação), desejo visualizar os cursos cadastrados, com dados claros, ordenação adequada e feedback visual, incluindo tratamento de estados vazios, erros de rede e paginação.
@@ -250,7 +436,11 @@ Como usuário (sem autenticação), desejo visualizar os cursos cadastrados, com
 
 ---
 
-### US3 – Excluir Curso
+## 📚 US3 – Excluir Curso
+
+**Requisitos relacionados:** RF-012 ao RF-015
+
+**Regras de negócio relacionadas:** RN-014 ao RN-017
 
 #### Descrição
 Como usuário, desejo remover um curso existente, com confirmação explícita, feedback claro e operação idempotente (repetição não causa efeitos colaterais).
@@ -276,9 +466,16 @@ Como usuário, desejo remover um curso existente, com confirmação explícita, 
 - Feedback visual consistente (loading, erros, confirmações).  
 - Operação deve ser idempotente: múltiplas requisições de exclusão não causam efeitos colaterais.  
 
-## 📊 Resumo Executivo de Qualidade
+## 📊 Resumo de Qualidade
 
-Este relatório consolida o status da validação das User Stories, conforme critérios de aceite e resultados dos testes realizados. O objetivo é fornecer uma visão clara e objetiva sobre a qualidade do produto, destacando pontos críticos, conformidades e oportunidades de melhoria identificadas durante a análise.  
+Durante a execução da estratégia de testes foram planejados e executados 26 casos de teste, cobrindo integralmente as três funcionalidades previstas no escopo do desafio.
+
+Foram identificados 20 defeitos, distribuídos entre falhas funcionais, limitações do ambiente de testes, problemas de interface e vulnerabilidades de segurança.
+
+Os resultados demonstram que a maior parte dos problemas está concentrada no fluxo de criação de cursos, principalmente em validações de regras de negócio, consistência dos dados e tratamento de erros.
+
+Apesar da cobertura funcional atingir 100%, a elevada incidência de falhas de alta severidade indica que a aplicação necessita de evolução antes de uma disponibilização em ambiente produtivo.
+
 O detalhamento completo, incluindo casos de teste, evidências, bugs e rastreabilidade, está disponível na [planilha de testes](https://docs.google.com/spreadsheets/d/117UMb9cgL2hvZKnPAlYS_xqoPKqJS3Jy8xluBRSShbo/edit?gid=0).
 
   ---
@@ -334,6 +531,10 @@ O detalhamento completo, incluindo casos de teste, evidências, bugs e rastreabi
   | Blocked  | 5          | 19%  |
   | **Total**| 26         | 100% |
 
+  Requisitos Cobertos: 100%
+
+  A alta taxa de falhas demonstra problemas importantes de implementação, enquanto os cenários bloqueados estão relacionados principalmente às limitações do ambiente de testes, e não necessariamente a defeitos da interface.
+
   ---
 
   ### 📌 Distribuição por User Story
@@ -348,13 +549,80 @@ O detalhamento completo, incluindo casos de teste, evidências, bugs e rastreabi
 
   ### 🚦 Distribuição por Severidade
 
-  | Severidade | Quantidade | %    |
-  |------------|------------|------|
-  | Alta       | 15         | 58%  |
-  | Média      | 8          | 31%  |
-  | Baixa      | 2          | 8%   |
+High
+
+60%
+
+██████████████████
+
+Medium
+
+32%
+
+█████████
+
+Low
+
+8%
+
+██
+
+Com base nos defeitos identificados, observa-se que 60% dos bugs possuem severidade alta, indicando que a maior parte das falhas impacta diretamente funcionalidades essenciais da aplicação.
+
+As principais categorias envolvem:
+
+* validação de regras de negócio;
+* integridade dos dados;
+* consistência funcional;
+* segurança;
+* persistência.
+
+Esse cenário evidencia que a aplicação necessita de uma revisão significativa antes de uma liberação para produção.
+
 
   ---
+
+  # 🔗 Matriz de Rastreabilidade
+
+A matriz de rastreabilidade estabelece a relação entre as regras de negócio, requisitos funcionais, User Stories, casos de teste, cenários BDD e bugs identificados durante a execução dos testes.
+
+Essa estrutura garante maior controle sobre a cobertura funcional da aplicação, facilitando auditorias, manutenção da documentação e identificação do impacto das falhas encontradas.
+
+ ## 📚 US1 – Criar Curso
+
+| RN     | RF     | US  | Casos de Teste | Feature       | Bugs    |
+| ------ | ------ | --- | -------------- | ------------- | ------- |
+| RN-001 | RF-001 | US1 | CT-001         | Create Course | BUG-001 |
+| RN-002 | RF-002 | US1 | CT-002         | Create Course | BUG-002 |
+| RN-003 | RF-002 | US1 | CT-003         | Create Course | BUG-003 |
+| RN-004 | RF-002 | US1 | CT-004         | Create Course | BUG-004 |
+| RN-005 | RF-003 | US1 | CT-005         | Create Course | BUG-008 |
+| RN-006 | RF-004 | US1 | CT-006         | Create Course | BUG-010 |
+| RN-007 | RF-005 | US1 | CT-007         | Create Course | BUG-006 |
+| RN-008 | RF-006 | US1 | CT-008         | Create Course | BUG-007 |
+| RN-009 | RF-001 | US1 | CT-009         | Create Course | —       |
+| RN-010 | RF-007 | US1 | CT-010         | Create Course | BUG-011 |
+
+ ## 📚 US2 – Listar Cursos
+
+| RN     | RF     | US  | Casos de Teste | Feature      | Bugs    |
+| ------ | ------ | --- | -------------- | ------------ | ------- |
+| RN-011 | RF-008 | US2 | CT-011         | List Courses | BUG-013 |
+| RN-012 | RF-009 | US2 | CT-012         | List Courses | BUG-013 |
+| RN-013 | RF-010 | US2 | CT-013         | List Courses | BUG-014 |
+| RN-011 | RF-011 | US2 | CT-014         | List Courses | BUG-015 |
+| RN-011 | RF-008 | US2 | CT-015         | List Courses | BUG-016 |
+
+## 📚 US3 – Excluir Curso
+
+| RN     | RF     | US  | Casos de Teste | Feature       | Bugs    |
+| ------ | ------ | --- | -------------- | ------------- | ------- |
+| RN-014 | RF-013 | US3 | CT-016         | Delete Course | BUG-018 |
+| RN-015 | RF-014 | US3 | CT-017         | Delete Course | BUG-017 |
+| RN-016 | RF-012 | US3 | CT-018         | Delete Course | BUG-019 |
+| RN-017 | RF-015 | US3 | CT-019         | Delete Course | BUG-020 |
+
+
 
   ### 📈 Métricas de Qualidade
   - **Taxa de Sucesso**: 27% (7/26).  
@@ -624,8 +892,7 @@ Com base na análise dos testes, critérios de aceite e documentação das User 
 
 ---
 
-## 📬 Conclusão e Agradecimentos:
-Este projeto demonstra um processo completo de análise e implementação de testes fundamentados a partir de uma bagagem profissional e pessoal. Em especial, foi uma experiência dinâmica e que me preparou ainda mais para mergulhar no universo da tecnologia, bem como, da qualidade. Este projeto foi desenvolvido com foco em clareza, organização e cobertura de cenários reais. A metodologia utilizada para análise de bugs foi definida para evidenciar as oportunidades de melhoria, falhas de seguranças e de rotas que não condizem com o objetivo da ferramenta. Agradeço pela oportunidade e desafio proposto. O processo até aqui foi de grande experiência para mim e melhoria das minhas técnicas como um profissional.
-
+## 📬 Conclusão:
+Este projeto demonstra a aplicação prática de técnicas de Engenharia de Qualidade de Software em um cenário próximo ao encontrado em ambientes corporativos. Ao longo da execução foram utilizados conceitos de planejamento, elaboração de casos de teste, testes exploratórios, análise baseada em risco, documentação de defeitos, rastreabilidade e produção de indicadores de qualidade. O resultado obtido evidencia não apenas a cobertura funcional do escopo proposto, mas também a capacidade de identificar riscos, interpretar métricas e produzir documentação técnica voltada ao processo de melhoria contínua do produto.
  
  
